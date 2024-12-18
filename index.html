@@ -266,7 +266,7 @@
       border-radius: 10px;
       width: 300px;
       text-align: center;
-      position: relative;
+      position: relative; /* Added relative positioning */
     }
 
     .form-modal-content input,
@@ -292,7 +292,7 @@
     }
 
     .close {
-      position: absolute;
+      position: absolute; /* Change to absolute */
       top: 10px;
       right: 10px;
       font-size: 30px;
@@ -300,67 +300,31 @@
       cursor: pointer;
     }
 
-    /* Media Queries for Responsiveness */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .header nav ul {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 20px;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .courses h2 {
-        font-size: 2rem;
-      }
-
-      .course-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .course img {
-        height: 150px;
-      }
-
-      .course h3 {
-        font-size: 1.3rem;
-      }
-
-      .contact-info h2 {
-        font-size: 2rem;
-      }
-
-      .contact-info p {
-        font-size: 0.9rem;
-      }
+    /* Button for mobile devices only */
+    #registerButton {
+      display: none; /* Hide the button by default */
     }
 
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2rem;
+    /* Media Query for Mobile Devices (screens smaller than 768px) */
+    @media (max-width: 768px) {
+      #registerButton {
+        display: block; /* Show the button on mobile devices */
+        position: fixed; /* Fix the button position to the bottom-right corner */
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #457b9d;
+        color: #f1faee;
+        border-radius: 50px;
+        border: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
       }
 
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .course-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer {
-        font-size: 0.8rem;
+      #registerButton:hover {
+        background-color: #a8dadc;
       }
     }
 
@@ -371,105 +335,97 @@
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <img src="https://images.wuzzuf-data.net/files/company_logo/205055484361f7be209c48a-og.jpeg" alt="EduPlus Logo">
+      <img src="https://images.wuzzuf-data.net/files/company_logo/205055484361f7e2464644bb98a25b22.jpg" alt="EduPlus Coaching Logo">
     </div>
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="javascript:void(0);" class="btn-login" onclick="showRegisterForm()">Register</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
+    <a href="#" class="btn-login">Login</a>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <h1>Empower Your Future with EduPlus</h1>
-    <p>Comprehensive Coaching for IIT JEE, NEET, and More!</p>
-    <a href="#courses" class="btn-primary">Explore Courses</a>
+  <section class="hero">
+    <h1>Welcome to EduPlus Coaching</h1>
+    <p>We provide the best coaching for IIT JEE, NEET, and Class 11/12 students</p>
+    <a href="#" class="btn-primary">Get Started</a>
   </section>
 
-  <!-- About Us Section -->
-  <section id="about" class="about">
-    <h2>About EduPlus Coaching</h2>
-    <p>EduPlus provides top-notch coaching for Class 11 & 12 students and aspiring candidates for IIT JEE and NEET. Our expert faculty and result-driven approach ensure success in competitive exams.</p>
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>At EduPlus Coaching, we offer top-notch coaching for competitive exams like IIT JEE and NEET. Our experienced
+      faculty and comprehensive study materials ensure that students succeed in their exams.</p>
   </section>
 
   <!-- Courses Section -->
-  <section id="courses" class="courses">
+  <section class="courses">
     <h2>Our Courses</h2>
     <div class="course-grid">
       <div class="course">
-        <img src="https://img.freepik.com/free-photo/ai-nuclear-energy-industry-innovation-smart-grid-disruptive-technology_53876-143121.jpg" alt="Class 11">
-        <h3>Class 11</h3>
-        <p>Comprehensive coaching for Class 11 students to build a strong foundation for future success.</p>
+        <img src="https://via.placeholder.com/300x200" alt="Course Image">
+        <h3>IIT JEE Coaching</h3>
+        <p>Our IIT JEE coaching program covers all aspects of the syllabus with a focus on problem-solving skills and
+          critical thinking.</p>
       </div>
       <div class="course">
-        <img src="https://img.freepik.com/free-vector/colorful-science-education-background_23-2148490697.jpg?semt=ais_hybrid" alt="Class 12">
-        <h3>Class 12</h3>
-        <p>Advanced coaching designed to help students excel in their Class 12 exams and competitive exams.</p>
-      </div>
-      <div class="course">
-        <img src="https://d3g5ywftkpzr0e.cloudfront.net/wp-content/uploads/2023/07/13220529/Artificial-Intelligence-in-Indonesia-The-current-state-and-its-opportunities.jpeg" alt="IIT JEE">
-        <h3>IIT JEE</h3>
-        <p>Intensive coaching for IIT JEE aspirants to ace the entrance exam with expert guidance.</p>
-      </div>
-      <div class="course">
-        <img src="https://images.shiksha.com/mediadata/images/articles/1625230340phpfj01TQ.jpeg" alt="Neet">
-        <h3>NEET</h3>
-        <p>Get ready for NEET with specialized coaching for medical aspirants.</p>
+        <img src="https://via.placeholder.com/300x200" alt="Course Image">
+        <h3>NEET Coaching</h3>
+        <p>Prepare for NEET with our expert faculty, comprehensive study material, and mock tests designed to
+          simulate the real exam.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-info">
+  <!-- Contact Info Section -->
+  <section class="contact-info">
     <h2>Contact Us</h2>
+    <p>If you have any questions, feel free to reach out to us:</p>
     <p>Email: <a href="mailto:info@eduplus.com">info@eduplus.com</a></p>
-    <p>Phone: +123 456 7890</p>
+    <p>Phone: +1 234 567 890</p>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2024 EduPlus Coaching. All Rights Reserved.</p>
     <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="fab fa-facebook"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-linkedin"></a>
     </div>
   </footer>
 
+  <!-- Register Button for Mobile -->
+  <button id="registerButton" class="btn-login" onclick="showRegisterForm()">Register</button>
+
   <!-- Modal for Registration Form -->
-  <div id="registerModal" class="form-modal">
+  <div class="form-modal" id="registerModal">
     <div class="form-modal-content">
       <span class="close" onclick="closeRegisterForm()">&times;</span>
-      <h3>Register Now</h3>
-      <form method="POST" action="https://your-backend-url.com/register.php">
-        <input type="text" name="full_name" placeholder="Full Name" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="text" name="phone" placeholder="Phone Number" required><br>
-        <select name="course" required>
-          <option value="">Select Course</option>
-          <option value="Class 11">Class 11</option>
-          <option value="Class 12">Class 12</option>
-          <option value="IIT JEE">IIT JEE</option>
-          <option value="NEET">NEET</option>
-        </select><br>
-        <button type="submit">Submit</button>
-      </form>
+      <h3>Register</h3>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+      <select>
+        <option>Choose Your Course</option>
+        <option>IIT JEE</option>
+        <option>NEET</option>
+      </select>
+      <button type="submit">Submit</button>
     </div>
   </div>
 
   <script>
     function showRegisterForm() {
-      document.getElementById("registerModal").classList.add("show");
+      document.getElementById('registerModal').classList.add('show');
     }
 
     function closeRegisterForm() {
-      document.getElementById("registerModal").classList.remove("show");
+      document.getElementById('registerModal').classList.remove('show');
     }
   </script>
 </body>

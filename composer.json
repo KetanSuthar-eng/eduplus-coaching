@@ -1,8 +1,0 @@
-{
-    "name": "eduplus/eduplus-coaching",
-    "description": "EduPlus PHP Backend",
-    "require": {
-      "php": "^7.4"
-    }
-  }
-  
